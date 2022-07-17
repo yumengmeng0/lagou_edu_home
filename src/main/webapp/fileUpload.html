@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传</title>
+</head>
+<body>
+
+<!--
+
+文件上传三要素:
+    1.表单的提交方式必须是post
+    2.表单的enctype必须是：multipart/form-data
+    3.表单必须有文件上传项
+
+-->
+<form method="post" enctype="multipart/form-data" action="/upload">
+    <input type="file" name="upload"><br>
+    <input type="submit" value="文件上传"><br>
+</form>
+
+</body>
+</html>
