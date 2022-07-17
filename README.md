@@ -7,8 +7,12 @@ war exploded模式：仅仅映射目录，相当于在项目源文件夹中启�
 # webapp部署
 
 把webapps/upload添加到external source，jsp能直接引入路径
+```html
 
 <img src="/upload/xx.jpg">
+
+```
+
 
 
 
