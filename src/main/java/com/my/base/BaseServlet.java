@@ -44,7 +44,7 @@ public class BaseServlet extends HttpServlet {
         String contentType = request.getHeader("Content-Type");
 
         // 2. 判断传递的数据是否是JSON格式
-        if ("application/json;charset=utf-8".equals(contentType)) {
+        if ("application/json;charset=utf-8".equalsIgnoreCase(contentType)) {
             String postJSON = getPostJSON(request);
             Map<String, Object> map = JSON.parseObject(postJSON, Map.class);
 

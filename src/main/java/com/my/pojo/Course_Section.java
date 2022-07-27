@@ -2,8 +2,6 @@ package com.my.pojo;
 
 import com.alibaba.fastjson.annotation.JSONField;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -59,7 +57,7 @@ public class Course_Section implements Serializable {
     /**
      * 章节下的课程
      */
-    private List<Course_Lesson> courseLessonList = new ArrayList<>();
+    private List<Course_Lesson> lessonList = new ArrayList<>();
 
     @Override
     public String toString() {

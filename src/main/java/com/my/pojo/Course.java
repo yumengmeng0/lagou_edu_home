@@ -98,7 +98,7 @@ public class Course implements Serializable {
     /**
      * 课程章节
      */
-    private List<Course_Section> courseSectionList = new ArrayList<>();
+    private List<Course_Section> sectionList = new ArrayList<>();
 
 
     //使用JSONField(serialize = false)排除不需要转换的字段

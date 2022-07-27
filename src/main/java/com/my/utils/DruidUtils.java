@@ -31,6 +31,10 @@ public class DruidUtils {
             //6. 通过工厂类获取连接池对象
             dataSource = DruidDataSourceFactory.createDataSource(p);
 
+
+
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }

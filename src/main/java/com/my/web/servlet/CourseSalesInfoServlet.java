@@ -79,7 +79,7 @@ public class CourseSalesInfoServlet extends HttpServlet {
                         String imgUrl = webappsPath + "/upload/" + newFileName;
                         FileOutputStream outputStream = new FileOutputStream(imgUrl);
 
-                        IOUtils.copy(inputStream, outputStream);
+                        IOUtils.copy(inputStream, outputStream); // 上传图片
                         outputStream.close();
                         inputStream.close();
 

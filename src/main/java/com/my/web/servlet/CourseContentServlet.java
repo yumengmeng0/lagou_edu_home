@@ -40,9 +40,9 @@ public class CourseContentServlet extends BaseServlet {
 
         try {
             String course_id = request.getParameter("course_id");
-            List<Course_Section> courseSectionList = courseContentService.findSectionAndLessonByCourseId(Integer.parseInt(course_id));
+            List<Course_Section> sectionList = courseContentService.findSectionAndLessonByCourseId(Integer.parseInt(course_id));
 
-            String result = JSON.toJSONString(courseSectionList);
+            String result = JSON.toJSONString(sectionList);
 
             response.getWriter().print(result);
         } catch (IOException e) {
@@ -83,7 +83,9 @@ public class CourseContentServlet extends BaseServlet {
 
             Course_Section course_section = new Course_Section();
 
-            BeanUtils.populate(course_section, map);
+//            BeanUtils.populate(course_section, map);
+
+            BeanUtils.copyProperties(course_section, map.get("section"));
 
             String result = null;
             if (course_section.getId() == 0) {

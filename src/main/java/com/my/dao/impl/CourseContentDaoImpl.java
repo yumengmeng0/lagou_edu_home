@@ -43,17 +43,17 @@ public class CourseContentDaoImpl implements CourseContentDao {
                     "  course_section\n" +
                     "WHERE course_id = ?;";
 
-            List<Course_Section> courseSectionList = queryRunner.query(sql, new BeanListHandler<Course_Section>(Course_Section.class), courseId);
+            List<Course_Section> sectionList = queryRunner.query(sql, new BeanListHandler<Course_Section>(Course_Section.class), courseId);
 
 
             // 根据章节id查询课时信息
-            for (Course_Section courseSection : courseSectionList) {
+            for (Course_Section courseSection : sectionList) {
                 // 章节对应课时
-                List<Course_Lesson> courseLessonList = findLessonBySectionId(courseSection.getId());
-                courseSection.setCourseLessonList(courseLessonList);
+                List<Course_Lesson> lessonList = findLessonBySectionId(courseSection.getId());
+                courseSection.setLessonList(lessonList);
             }
 
-            return courseSectionList;
+            return sectionList;
         } catch (SQLException e) {
             e.printStackTrace();
             return null;
@@ -82,8 +82,8 @@ public class CourseContentDaoImpl implements CourseContentDao {
                     "FROM\n" +
                     "  course_lesson\n" +
                     "WHERE section_id = ?;";
-            List<Course_Lesson> courseLessonList = queryRunner.query(sql, new BeanListHandler<Course_Lesson>(Course_Lesson.class), sessionId);
-            return courseLessonList;
+            List<Course_Lesson> lessonList = queryRunner.query(sql, new BeanListHandler<Course_Lesson>(Course_Lesson.class), sessionId);
+            return lessonList;
         } catch (SQLException e) {
             e.printStackTrace();
             return null;

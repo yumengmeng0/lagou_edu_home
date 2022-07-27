@@ -23,13 +23,13 @@ public class TestCourseContentDao {
 
     @Test
     public void testFindSectionAndLessonByCourseId() {
-        List<Course_Section> courseSectionList = courseContentDao.findSectionAndLessonByCourseId(1);
-        for (Course_Section course_section : courseSectionList) {
+        List<Course_Section> sectionList = courseContentDao.findSectionAndLessonByCourseId(1);
+        for (Course_Section course_section : sectionList) {
             int id = course_section.getId();
             System.out.println("id = " + id);
 
-            List<Course_Lesson> courseLessonList = course_section.getCourseLessonList();
-            for (Course_Lesson course_lesson : courseLessonList) {
+            List<Course_Lesson> lessonList = course_section.getLessonList();
+            for (Course_Lesson course_lesson : lessonList) {
                 int id1 = course_lesson.getId();
                 String theme = course_lesson.getTheme();
                 int section_id = course_lesson.getSection_id();
