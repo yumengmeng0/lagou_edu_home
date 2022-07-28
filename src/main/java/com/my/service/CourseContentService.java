@@ -1,6 +1,7 @@
 package com.my.service;
 
 import com.my.pojo.Course;
+import com.my.pojo.Course_Lesson;
 import com.my.pojo.Course_Section;
 
 import java.util.List;
@@ -55,5 +56,29 @@ public interface CourseContentService {
      */
     public String updateSectionStatus(int id, int status);
 
+    /**
+     * 添加课时信息
+     *
+     * @param courseLesson
+     * @return
+     */
+    public String saveLesson(Course_Lesson courseLesson);
+
+    /**
+     * 更新课时信息
+     *
+     * @param courseLesson
+     * @return
+     */
+    public String updateLesson(Course_Lesson courseLesson);
+
+    /**
+     * 更新课时状态
+     *
+     * @param id
+     * @param status
+     * @return
+     */
+    public String updateLessonStatus(int id, int status);
 
 }

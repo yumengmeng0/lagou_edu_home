@@ -77,4 +77,46 @@ public class TestCourseContentDao {
         int i = courseContentDao.updateSectionStatus(1, 0);
         System.out.println("i = " + i);
     }
+
+
+    @Test
+    public void testSaveLesson() {
+        Course_Lesson course_lesson = new Course_Lesson();
+
+        course_lesson.setCourse_id(1);
+        course_lesson.setSection_id(1);
+        course_lesson.setTheme("第11讲");
+        course_lesson.setDuration(55);
+        course_lesson.setIs_free(1);
+        course_lesson.setOrderNum(14);
+        course_lesson.setStatus(1);
+
+        String dateFormat = DateUtils.getDateFormat();
+        course_lesson.setCreate_time(dateFormat);
+        course_lesson.setUpdate_time(dateFormat);
+
+        courseContentDao.saveLesson(course_lesson);
+    }
+
+    @Test
+    public void testUpdateLesson() {
+        Course_Lesson course_lesson = new Course_Lesson();
+
+        course_lesson.setId(42);
+        course_lesson.setTheme("第11讲：修改");
+        course_lesson.setDuration(66);
+        course_lesson.setIs_free(0);
+        course_lesson.setOrderNum(18);
+        String dateFormat = DateUtils.getDateFormat();
+        course_lesson.setUpdate_time(dateFormat);
+
+        courseContentDao.updateLesson(course_lesson);
+    }
+
+    @Test
+    public void testUpdateLessonStatus(){
+        int i = courseContentDao.updateLessonStatus(42, 1);
+        System.out.println("i = " + i);
+    }
+
 }

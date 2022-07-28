@@ -224,4 +224,110 @@ public class CourseContentDaoImpl implements CourseContentDao {
         }
 
     }
+
+    /**
+     * 添加课时信息
+     *
+     * @param courseLesson
+     * @return
+     */
+    @Override
+    public int saveLesson(Course_Lesson courseLesson) {
+        try {
+            String sql = " INSERT INTO course_lesson (\n" +
+                    "  course_id,\n" +
+                    "  section_id,\n" +
+                    "  theme,\n" +
+                    "  duration,\n" +
+                    "  is_free,\n" +
+                    "  order_num,\n" +
+                    "  STATUS,\n" +
+                    "  create_time,\n" +
+                    "  update_time\n" +
+                    ")\n" +
+                    "VALUES(?,?,?,?,?,?,?,?,?);";
+
+            Object[] param = {
+                    courseLesson.getCourse_id(),
+                    courseLesson.getSection_id(),
+                    courseLesson.getTheme(),
+                    courseLesson.getDuration(),
+                    courseLesson.getIs_free(),
+                    courseLesson.getOrderNum(),
+                    courseLesson.getStatus(),
+                    courseLesson.getCreate_time(),
+                    courseLesson.getUpdate_time()
+            };
+
+            int row = queryRunner.update(sql, param);
+            return row;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return 0;
+        }
+
+    }
+
+    /**
+     * 更新课时信息
+     *
+     * @param courseLesson
+     * @return
+     */
+    @Override
+    public int updateLesson(Course_Lesson courseLesson) {
+
+        try {
+            String sql = "UPDATE course_lesson SET  \n" +
+                    "  theme = ?,\n" +
+                    "  duration = ?,\n" +
+                    "  is_free = ?,\n" +
+                    "  order_num = ?,\n" +
+                    "  update_time = ?\n" +
+                    "WHERE id = ?;";
+
+            Object[] param = {
+                    courseLesson.getTheme(),
+                    courseLesson.getDuration(),
+                    courseLesson.getIs_free(),
+                    courseLesson.getOrderNum(),
+                    courseLesson.getUpdate_time(),
+                    courseLesson.getId()
+            };
+
+            int row = queryRunner.update(sql, param);
+            return row;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return 0;
+        }
+
+    }
+
+    /**
+     * 更新课时状态
+     *
+     * @param id
+     * @param status
+     * @return
+     */
+    @Override
+    public int updateLessonStatus(int id, int status) {
+        try {
+            String sql = "UPDATE course_lesson SET  \n" +
+                    "  STATUS = ?,\n" +
+                    "  update_time = ?\n" +
+                    "WHERE id = ?; \n";
+            Object[] param = {
+                    status,
+                    DateUtils.getDateFormat(),
+                    id
+            };
+            int row = queryRunner.update(sql, param);
+            return row;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
 }

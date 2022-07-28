@@ -70,6 +70,7 @@ public class BaseServlet extends HttpServlet {
 //            System.out.println("请求的功能不存在！");
 //        }
 
+        System.out.println("methodName = " + methodName);
         if (methodName != null) {
             Class c = this.getClass();
 

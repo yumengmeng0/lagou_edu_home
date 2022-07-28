@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SimplePropertyPreFilter;
 import com.my.base.BaseServlet;
 import com.my.pojo.Course;
+import com.my.pojo.Course_Lesson;
 import com.my.pojo.Course_Section;
 import com.my.service.CourseContentService;
 import com.my.service.impl.CourseContentServiceImpl;
@@ -121,6 +122,50 @@ public class CourseContentServlet extends BaseServlet {
 
             String result = courseContentService.updateSectionStatus(Integer.parseInt(id), Integer.parseInt(status));
 
+            response.getWriter().print(result);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 保存或更新课时状态
+     *
+     * @param request
+     * @param response
+     */
+    public void saveOrUpdateLesson(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            Map<String, Object> map = (Map) request.getAttribute("map");
+            Course_Lesson course_lesson = new Course_Lesson();
+            BeanUtils.copyProperties(course_lesson, map.get("lesson"));
+
+            String result;
+            if (course_lesson.getId() == 0) {
+                result = courseContentService.saveLesson(course_lesson);
+            } else {
+                result = courseContentService.updateLesson(course_lesson);
+            }
+
+            response.getWriter().print(result);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
+     * 修改课时状态
+     *
+     * @param request
+     * @param response
+     */
+    public void updateLessonStatus(HttpServletRequest request, HttpServletResponse response) {
+        try {
+            String id = request.getParameter("id");
+            String status = request.getParameter("status");
+            String result = courseContentService.updateLessonStatus(Integer.parseInt(id), Integer.parseInt(status));
             response.getWriter().print(result);
         } catch (IOException e) {
             e.printStackTrace();

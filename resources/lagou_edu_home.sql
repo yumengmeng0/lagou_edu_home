@@ -196,3 +196,36 @@ SET
   update_time = ?
 WHERE id = ?;
 
+
+SELECT DATABASE();
+
+# 添加课时信息
+ INSERT INTO course_lesson (
+  course_id,
+  section_id,
+  theme,
+  duration,
+  is_free,
+  order_num,
+  STATUS,
+  create_time,
+  update_time
+)
+VALUES(?,?,?,?,?,?,?,?,?);
+
+# 更课时信息
+
+UPDATE course_lesson SET  
+  theme = ?,
+  duration = ?,
+  is_free = ?,
+  order_num = ?,
+  update_time = ?
+WHERE id = ?; 
+
+UPDATE course_lesson SET  
+  STATUS = ?,
+  update_time = ?
+WHERE id = ?; 
+
+
