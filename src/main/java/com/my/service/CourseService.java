@@ -20,7 +20,7 @@ public interface CourseService {
      *
      * @return
      */
-    public List<Course> findCourseList();
+    List<Course> findCourseList();
 
     /**
      * 根据条件查询课程信息
@@ -29,7 +29,7 @@ public interface CourseService {
      * @param status
      * @return
      */
-    public List<Course> findByCourseNameAndStatus(String courseName, String status);
+    List<Course> findByCourseNameAndStatus(String courseName, String status);
 
     /**
      * 保存课程营销信息
@@ -37,7 +37,7 @@ public interface CourseService {
      * @param course
      * @return
      */
-    public String saveCourseSalesInfo(Course course);
+    String saveCourseSalesInfo(Course course);
 
 
     /**
@@ -46,7 +46,7 @@ public interface CourseService {
      * @param id
      * @return
      */
-    public Course findCourseById(int id);
+    Course findCourseById(int id);
 
     /**
      * 修改营销信息
@@ -54,7 +54,7 @@ public interface CourseService {
      * @param course
      * @return
      */
-    public String updateCourseSalesInfo(Course course);
+    String updateCourseSalesInfo(Course course);
 
 
     /**
@@ -62,6 +62,6 @@ public interface CourseService {
      * @param course
      * @return
      */
-    public Map<String,Integer> updateCourseStatus(Course course);
+    Map<String,Integer> updateCourseStatus(Course course);
 
 }

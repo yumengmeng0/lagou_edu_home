@@ -20,14 +20,14 @@ public interface CourseContentDao {
      * @param courseId
      * @return
      */
-    public List<Course_Section> findSectionAndLessonByCourseId(int courseId);
+    List<Course_Section> findSectionAndLessonByCourseId(int courseId);
 
     /**
      * 根据章节id查询章节相关的课时信息
      *
      * @return
      */
-    public List<Course_Lesson> findLessonBySectionId(int sessionId);
+    List<Course_Lesson> findLessonBySectionId(int sessionId);
 
     /**
      * 根据课程id查询课程信息
@@ -35,7 +35,7 @@ public interface CourseContentDao {
      * @param courseId
      * @return
      */
-    public Course findCourseById(int courseId);
+    Course findCourseById(int courseId);
 
     /**
      * 保存章节信息
@@ -43,7 +43,7 @@ public interface CourseContentDao {
      * @param courseSection
      * @return
      */
-    public int saveSection(Course_Section courseSection);
+    int saveSection(Course_Section courseSection);
 
     /**
      * 修改章节信息
@@ -51,7 +51,7 @@ public interface CourseContentDao {
      * @param courseSection
      * @return
      */
-    public int updateSection(Course_Section courseSection);
+    int updateSection(Course_Section courseSection);
 
 
     /**
@@ -61,7 +61,7 @@ public interface CourseContentDao {
      * @param status
      * @return
      */
-    public int updateSectionStatus(int id, int status);
+    int updateSectionStatus(int id, int status);
 
     /**
      * 添加课时信息
@@ -69,7 +69,7 @@ public interface CourseContentDao {
      * @param courseLesson
      * @return
      */
-    public int saveLesson(Course_Lesson courseLesson);
+    int saveLesson(Course_Lesson courseLesson);
 
     /**
      * 更新课时信息
@@ -77,7 +77,7 @@ public interface CourseContentDao {
      * @param courseLesson
      * @return
      */
-    public int updateLesson(Course_Lesson courseLesson);
+    int updateLesson(Course_Lesson courseLesson);
 
     /**
      * 更新课时状态
@@ -86,7 +86,7 @@ public interface CourseContentDao {
      * @param status
      * @return
      */
-    public int updateLessonStatus(int id, int status);
+    int updateLessonStatus(int id, int status);
 
 
 }

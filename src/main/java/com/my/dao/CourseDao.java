@@ -17,7 +17,7 @@ public interface CourseDao {
      *
      * @return
      */
-    public List<Course> findCourseList();
+    List<Course> findCourseList();
 
 
     /**
@@ -27,7 +27,7 @@ public interface CourseDao {
      * @param status
      * @return
      */
-    public List<Course> findByCourseNameAndStatus(String courseName, String status);
+    List<Course> findByCourseNameAndStatus(String courseName, String status);
 
     /**
      * 保存课程营销信息
@@ -35,7 +35,7 @@ public interface CourseDao {
      * @param course
      * @return
      */
-    public int saveCourseSalesInfo(Course course);
+    int saveCourseSalesInfo(Course course);
 
     /**
      * 根据课程查询id
@@ -43,7 +43,7 @@ public interface CourseDao {
      * @param id
      * @return
      */
-    public Course findCourseById(int id);
+    Course findCourseById(int id);
 
     /**
      * 修改营销信息
@@ -51,7 +51,7 @@ public interface CourseDao {
      * @param course
      * @return
      */
-    public int updateCourseSalesInfo(Course course);
+    int updateCourseSalesInfo(Course course);
 
 
     /**
@@ -59,7 +59,7 @@ public interface CourseDao {
      * @param course
      * @return
      */
-    public int updateCourseStatus(Course course);
+    int updateCourseStatus(Course course);
 
 
 }
