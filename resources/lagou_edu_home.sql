@@ -224,8 +224,10 @@ UPDATE course_lesson SET
 WHERE id = ?; 
 
 UPDATE course_lesson SET  
-  STATUS = ?,
+  status = ?,
   update_time = ?
 WHERE id = ?; 
 
+
+select id,status,update_time,is_free from course_lesson where id = 42;
 
