@@ -1,4 +1,5 @@
-# 单体架构项目：拉勾教育课程管理系统 后端
+# JavaWeb单体架构项目：拉勾教育课程管理系统 后端
+
 对应的项目前端地址：https://github.com/yumengmeng92/edu-boss
 ![alt 拉勾教育课程管理系统](images/拉勾教育课程管理系统.PNG "拉勾教育课程管理系统")
 
